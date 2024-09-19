@@ -19,7 +19,7 @@ ok      github.com/anoriqq/go-benchmark-struct-val-vs-ptr       8.737s
 
 myStruct mem size: 8 * 2 = 16 bytes
 ```
-❯ go test -bench . -benchmem
+$ go test -bench . -benchmem
 goos: linux
 goarch: amd64
 pkg: github.com/anoriqq/go-benchmark-struct-val-vs-ptr
@@ -36,7 +36,7 @@ ok      github.com/anoriqq/go-benchmark-struct-val-vs-ptr       7.086s
 
 myStruct mem size: 8 * 4 = 32 bytes
 ```
-❯ go test -bench . -benchmem
+$ go test -bench . -benchmem
 goos: linux
 goarch: amd64
 pkg: github.com/anoriqq/go-benchmark-struct-val-vs-ptr
@@ -49,4 +49,21 @@ BenchmarkVal_LongLife_NoGrow-12         200596273                6.546 ns/op    
 BenchmarkPtr_LongLife_NoGrow-12         63249404                17.81 ns/op           40 B/op          1 allocs/op
 PASS
 ok      github.com/anoriqq/go-benchmark-struct-val-vs-ptr       7.173s
+```
+
+myStruct mem size: 8 * 8 = 64 bytes
+```
+$ go test -bench . -benchmem
+goos: linux
+goarch: amd64
+pkg: github.com/anoriqq/go-benchmark-struct-val-vs-ptr
+cpu: 13th Gen Intel(R) Core(TM) i7-1365U
+BenchmarkVal_ShortLife-12               1000000000               0.3632 ns/op          0 B/op          0 allocs/op
+BenchmarkPtr_ShortLife-12               1000000000               0.3619 ns/op          0 B/op          0 allocs/op
+BenchmarkVal_LongLife-12                25365835                42.92 ns/op          353 B/op          0 allocs/op
+BenchmarkPtr_LongLife-12                27244147                38.38 ns/op          111 B/op          1 allocs/op
+BenchmarkVal_LongLife_NoGrow-12         100000000               13.74 ns/op           64 B/op          0 allocs/op
+BenchmarkPtr_LongLife_NoGrow-12         41581140                25.39 ns/op           72 B/op          1 allocs/op
+PASS
+ok      github.com/anoriqq/go-benchmark-struct-val-vs-ptr       6.450s
 ```
