@@ -1,6 +1,6 @@
 package main
 
-const size = 1
+const size = 2
 
 type myStruct struct {
 	arr [size]int64 // 8 * size bytes
