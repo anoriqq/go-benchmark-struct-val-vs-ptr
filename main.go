@@ -3,7 +3,7 @@ package main
 const size = 10 ^ 32
 
 type myStruct struct {
-	arr [size]int
+	arr [size]int64 // 8 * size bytes
 }
 
 func NewMyStructVal() myStruct {

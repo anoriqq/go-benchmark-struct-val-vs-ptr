@@ -5,7 +5,7 @@ import (
 )
 
 func BenchmarkVal_ShortLife(b *testing.B) {
-	var sum int
+	var sum int64
 	for i := 0; i < b.N; i++ {
 		v := NewMyStructVal()
 		sum += v.arr[0]
@@ -13,7 +13,7 @@ func BenchmarkVal_ShortLife(b *testing.B) {
 }
 
 func BenchmarkPtr_ShortLife(b *testing.B) {
-	var sum int
+	var sum int64
 	for i := 0; i < b.N; i++ {
 		v := NewMyStructPtr()
 		sum += v.arr[0]
